@@ -1,0 +1,4 @@
+sceneSetups:
+- path: Assets/Scenes/I Wanna Help the Cat/Scene2 - Sun.unity
+  isLoaded: 1
+  isActive: 1

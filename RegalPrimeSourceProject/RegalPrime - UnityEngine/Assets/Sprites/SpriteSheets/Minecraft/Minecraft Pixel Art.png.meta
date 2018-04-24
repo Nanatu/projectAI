@@ -1,0 +1,885 @@
+fileFormatVersion: 2
+guid: 742b3c2d563a99642a90adcbb4453a03
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Minecraft Pixel Art_0
+    21300002: Minecraft Pixel Art_1
+    21300004: Minecraft Pixel Art_2
+    21300006: Minecraft Pixel Art_3
+    21300008: Minecraft Pixel Art_4
+    21300010: Minecraft Pixel Art_5
+    21300012: Minecraft Pixel Art_6
+    21300014: Minecraft Pixel Art_7
+    21300016: Minecraft Pixel Art_8
+    21300018: Minecraft Pixel Art_9
+    21300020: Minecraft Pixel Art_10
+    21300022: Minecraft Pixel Art_11
+    21300024: Minecraft Pixel Art_12
+    21300026: Minecraft Pixel Art_13
+    21300028: Minecraft Pixel Art_14
+    21300030: Minecraft Pixel Art_15
+    21300032: Minecraft Pixel Art_16
+    21300034: Minecraft Pixel Art_17
+    21300036: Minecraft Pixel Art_18
+    21300038: Minecraft Pixel Art_19
+    21300040: Minecraft Pixel Art_20
+    21300042: Minecraft Pixel Art_21
+    21300044: Minecraft Pixel Art_22
+    21300046: Minecraft Pixel Art_23
+    21300048: Minecraft Pixel Art_24
+    21300050: Minecraft Pixel Art_25
+    21300052: Minecraft Pixel Art_26
+    21300054: Minecraft Pixel Art_27
+    21300056: Minecraft Pixel Art_28
+    21300058: Minecraft Pixel Art_29
+    21300060: Minecraft Pixel Art_30
+    21300062: Minecraft Pixel Art_31
+    21300064: Minecraft Pixel Art_32
+    21300066: Minecraft Pixel Art_33
+    21300068: Minecraft Pixel Art_34
+    21300070: Minecraft Pixel Art_35
+    21300072: Minecraft Pixel Art_36
+    21300074: Minecraft Pixel Art_37
+    21300076: Minecraft Pixel Art_38
+    21300078: Minecraft Pixel Art_39
+    21300080: Minecraft Pixel Art_40
+    21300082: Minecraft Pixel Art_41
+    21300084: Minecraft Pixel Art_42
+    21300086: Minecraft Pixel Art_43
+    21300088: Minecraft Pixel Art_44
+    21300090: Minecraft Pixel Art_45
+    21300092: Minecraft Pixel Art_46
+    21300094: Minecraft Pixel Art_47
+    21300096: Minecraft Pixel Art_48
+    21300098: Minecraft Pixel Art_50
+    21300100: Minecraft Pixel Art_51
+    21300102: Minecraft Pixel Art_52
+    21300104: Minecraft Pixel Art_53
+    21300106: Minecraft Pixel Art_54
+  externalObjects: {}
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 512
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: -1
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 512
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Minecraft Pixel Art_0
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 294
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Minecraft Pixel Art_1
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 294
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Minecraft Pixel Art_2
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 294
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Minecraft Pixel Art_3
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 294
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Minecraft Pixel Art_4
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 294
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Minecraft Pixel Art_5
+      rect:
+        serializedVersion: 2
+        x: 246
+        y: 294
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Minecraft Pixel Art_6
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 294
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Minecraft Pixel Art_7
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 294
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Minecraft Pixel Art_8
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 294
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Minecraft Pixel Art_9
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 246
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Minecraft Pixel Art_10
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 246
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Minecraft Pixel Art_11
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 246
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Minecraft Pixel Art_12
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 246
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Minecraft Pixel Art_13
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 246
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Minecraft Pixel Art_14
+      rect:
+        serializedVersion: 2
+        x: 246
+        y: 246
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Minecraft Pixel Art_15
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 246
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Minecraft Pixel Art_16
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 246
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Minecraft Pixel Art_17
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 246
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Minecraft Pixel Art_18
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 198
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Minecraft Pixel Art_19
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 198
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Minecraft Pixel Art_20
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 198
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Minecraft Pixel Art_21
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 198
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Minecraft Pixel Art_22
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 198
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Minecraft Pixel Art_23
+      rect:
+        serializedVersion: 2
+        x: 246
+        y: 198
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Minecraft Pixel Art_24
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 198
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Minecraft Pixel Art_25
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 198
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Minecraft Pixel Art_26
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 198
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Minecraft Pixel Art_27
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 150
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Minecraft Pixel Art_28
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 150
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Minecraft Pixel Art_29
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 150
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Minecraft Pixel Art_30
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 150
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Minecraft Pixel Art_31
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 150
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Minecraft Pixel Art_32
+      rect:
+        serializedVersion: 2
+        x: 246
+        y: 150
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Minecraft Pixel Art_33
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 150
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Minecraft Pixel Art_34
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 150
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Minecraft Pixel Art_35
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 102
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Minecraft Pixel Art_36
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 102
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Minecraft Pixel Art_37
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 102
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Minecraft Pixel Art_38
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 102
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Minecraft Pixel Art_39
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 102
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Minecraft Pixel Art_40
+      rect:
+        serializedVersion: 2
+        x: 246
+        y: 102
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Minecraft Pixel Art_41
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 102
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Minecraft Pixel Art_42
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 102
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Minecraft Pixel Art_43
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 102
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Minecraft Pixel Art_44
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 54
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Minecraft Pixel Art_45
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 54
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Minecraft Pixel Art_46
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 54
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Minecraft Pixel Art_47
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 54
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Minecraft Pixel Art_48
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 54
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Minecraft Pixel Art_50
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 54
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Minecraft Pixel Art_51
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 54
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Minecraft Pixel Art_52
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 54
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Minecraft Pixel Art_53
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 6
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Minecraft Pixel Art_54
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 6
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    outline: []
+    physicsShape: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
