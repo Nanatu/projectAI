@@ -16,7 +16,10 @@ using System.Collections;
 public class PlayerSpawnController : MonoBehaviour
 {
 	public static PlayerSpawnController spawnguy;			// Reference to this script
-	public GameObject GuyPrefab;							// Object to spawn
+	public GameObject GuyPrefab; 							// Object to spawn
+
+    //Neural Network
+    public Manager ManagerNetwork;
 
 	public Transform[] spawnPoints;							// Location of the available spawnpoints
 
@@ -32,14 +35,18 @@ public class PlayerSpawnController : MonoBehaviour
 		if(spawnPoints.Length == 0)		// If there are no spawn points added to the array, the object itself becomes the default spawnpoint
 			spawnPoints = new Transform[] {gameObject.transform};
 
-	}
+        ManagerNetwork.InitCharacterNeuralNetworks();
+
+    }
 	
-	void Start()
+	public void Start()
 	{
 		if(GameController.control.LoadingFile ()) // If loading from file - spawn at saved position and reset trigger
 		{
 			GameController.control.GuyLocation = Instantiate (GuyPrefab, new Vector3(GameController.control.LoadedX, GameController.control.LoadedY, 0), transform.rotation) as GameObject;
 			GameController.control.SetLoadingFile(false);
+
+            
 		}
 		else // This spawns the character usually when switching scenes
 		{

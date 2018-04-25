@@ -5,7 +5,12 @@ using UnityEngine;
 using System.Collections;
 
 public abstract class PlatformerCharacter2D : MonoBehaviour
-{	
+{
+
+    GameController gameController = null;
+    PlayerSpawnController spawnController = null;
+    NeuralNetwork NN;
+
 	public LayerMask whatIsGround;						// What is considered ground
 	public AudioClip jump1Sound;						// First Jump sound
 	public AudioClip jump2Sound;						// Second Jump sound
@@ -106,7 +111,10 @@ public abstract class PlatformerCharacter2D : MonoBehaviour
 
 	public void Awake()
 	{
-		EventManager.resetObjects += Reset;
+        gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
+        spawnController = GameObject.FindGameObjectWithTag("PlayerSPawnController").GetComponent<PlayerSpawnController>();
+
+        EventManager.resetObjects += Reset;
 
 		EventManager.CreateEventManagerIfNeeded ();
 		_theRigidbody2D = GetComponent<Rigidbody2D> ();
@@ -155,10 +163,52 @@ public abstract class PlatformerCharacter2D : MonoBehaviour
 		gameObject.transform.parent = null;
 	}
 	
+
+    void populateInput(float []input)
+    {
+        //Do stuff here
+    }
+
+    void transferInput(float []input, int []newInput)
+    {
+        if (input[0] < -.5) //Movement
+            newInput[0] = -1;
+        else if (input[0] > .5)
+            newInput[0] = 1;
+        else
+            newInput[0] = 0;
+
+        if (input[1] < 0) //Jump
+            newInput[1] = 0;
+        else if (input[1] < .5)
+            newInput[1] = 0;
+        else if (input[1] < 1.5)
+            newInput[1] = 1;
+        else if (input[1] < 2.5)
+            newInput[1] = 2;
+        else
+            newInput[1] = 3;
+
+        if (input[2] < 0) //"We get shoot shoot now"
+            newInput[2] = 0;
+        else
+            newInput[2] = 1;
+    }
 	
 	void FixedUpdate()
 	{
-		if(_isMoving)
+
+        float []output = new float[3];
+        float[] input = new float[74];
+        int it;
+
+        int[] newOutput = new int[3];
+
+        populateInput(input);
+
+        it = spawnController.ManagerNetwork.iter;
+
+        /*if(_isMoving)
 		{
 			Move (moveDirection);
 			_isMoving = false;
@@ -168,10 +218,13 @@ public abstract class PlatformerCharacter2D : MonoBehaviour
 		{
 			Jump ();
 			_isJumping = false;
-		}
-		
-		ApplyGravity ();
-		SetAnimationVariables ();
+		}*/
+
+        output = (spawnController.ManagerNetwork.nets[it]).FeedForward(input);
+        transferInput(output, newOutput);
+
+        ApplyGravity();
+		SetAnimationVariables();
 
 		if(currentHorizontalSpeed == 0 && _theRigidbody2D.velocity.x != 0)	// Nullify outside forces on the player, just in case
 		{
