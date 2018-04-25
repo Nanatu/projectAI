@@ -69,7 +69,10 @@ public class NavigateRooms : MonoBehaviour
 		{
 			collisionCount++;
 
-			if(warpInSameRoom)
+            //Neural network stuff-----------------------------------------------------------------------------------
+            (GameObject.FindGameObjectWithTag("PlayerSpawnController").GetComponent<PlayerSpawnController>()).ManagerNetwork.win = true;
+            (GameObject.FindGameObjectWithTag("PlayerSpawnController").GetComponent<PlayerSpawnController>()).ManagerNetwork.Update();
+            if (warpInSameRoom)
 			{
 				WarpingToSameRoom(other.gameObject);
 			}

@@ -155,7 +155,7 @@ public class GameController : MonoBehaviour
 			Application.LoadLevel(LoadedRoom);
 		}
 	}
-	void OnButtonPressed_ResetGame()
+	public void OnButtonPressed_ResetGame()
 	{
 		if(Application.loadedLevel != 0 && Application.loadedLevel != 1 && !StartAtBeginning)
 			SaveTimerDeath();

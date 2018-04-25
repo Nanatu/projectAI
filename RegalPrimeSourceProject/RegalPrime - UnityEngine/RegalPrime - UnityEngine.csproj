@@ -262,6 +262,8 @@
     <Compile Include="Assets\Scripts\Guy Scripts\PlayerHPModule.cs" />
     <Compile Include="Assets\Scripts\Guy Scripts\Shooting.cs" />
     <Compile Include="Assets\Scripts\Guy Scripts\WhenBulletDies.cs" />
+    <Compile Include="Assets\Scripts\Manager.cs" />
+    <Compile Include="Assets\Scripts\NeuralNetwork.cs" />
     <Compile Include="Assets\Scripts\Object Script Scripts\ColorChangeSprite.cs" />
     <Compile Include="Assets\Scripts\Object Script Scripts\ObjectCreation.cs" />
     <Compile Include="Assets\Scripts\Object Script Scripts\ObjectCreation_CustomShots.cs" />
