@@ -5,7 +5,9 @@ using UnityEngine;
 public class Manager : MonoBehaviour {
 
 
-    GameController controller = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
+    GameController gameController;
+
+    
 
     public bool win;
 
@@ -58,7 +60,7 @@ public class Manager : MonoBehaviour {
             else
                 nets[iter].AddFitness(1f);
 
-            controller.OnButtonPressed_ResetGame();
+           gameController.OnButtonPressed_ResetGame();
             nets.Sort();
             for (int x = 0; x < populationSize / 2; x++)
             {
@@ -73,7 +75,7 @@ public class Manager : MonoBehaviour {
             }
 
             generationNumber++;
-            Invoke("Timer", 45f);
+            Invoke("Timer", 10f);
 
             iter = (iter + 1) % populationSize; //Cycle through the population
             win = false;
@@ -101,6 +103,7 @@ public class Manager : MonoBehaviour {
 
     public void InitCharacterNeuralNetworks()
     {
+        gameController = GameObject.Find("GameController").GetComponent<GameController>();
         win = false;
         nets = new List<NeuralNetwork>();
         for(int x = 0; x < populationSize; x++)

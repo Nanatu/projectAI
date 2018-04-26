@@ -26,7 +26,7 @@ public class PlayerSpawnController : MonoBehaviour
 	void Awake()
 	{
 		spawnguy = this;				// Set the static reference
-//		tag = "PlayerSpawner";			// Set an object with this script to the PlayerSpawner tag
+		//tag = "PlayerSpawner";			// Set an object with this script to the PlayerSpawner tag
 
 		// THIS IS AN EASY WAY TO CHANGE WHICH GUY IS USED IN THE ENTIRE GAME
 //		GuyPrefab =  (GameObject)Resources.Load("GuyCharacterPrefab_Physics_Resource") as GameObject;
@@ -35,6 +35,7 @@ public class PlayerSpawnController : MonoBehaviour
 		if(spawnPoints.Length == 0)		// If there are no spawn points added to the array, the object itself becomes the default spawnpoint
 			spawnPoints = new Transform[] {gameObject.transform};
 
+        ManagerNetwork = new Manager();
         ManagerNetwork.InitCharacterNeuralNetworks();
 
     }

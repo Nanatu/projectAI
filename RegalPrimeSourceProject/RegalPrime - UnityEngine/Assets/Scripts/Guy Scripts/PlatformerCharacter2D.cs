@@ -6,14 +6,15 @@ using System.Collections;
 
 public abstract class PlatformerCharacter2D : MonoBehaviour
 {
+    public GameController gameController;
+    public PlayerSpawnController spawnController;
+    //public GameController gameController = GameObject.Find("GameController").GetComponent<GameController>();
+   // public PlayerSpawnController spawnController = GameObject.Find("PlayerSpawnController").GetComponent<PlayerSpawnController>();
+    //NeuralNetwork NN;
 
-    GameController gameController = null;
-    PlayerSpawnController spawnController = null;
-    NeuralNetwork NN;
-
-	public LayerMask whatIsGround;						// What is considered ground
+    public LayerMask whatIsGround;						// What is considered ground
 	public AudioClip jump1Sound;						// First Jump sound
-	public AudioClip jump2Sound;						// Second Jump sound
+	public AudioClip jump2Sound;						// Second Jump /
 
 	private float moveDirection = 0; 					// The current move direction based on keyboard input
 	private bool _isMoving = false;						// Can the move function be called? onkeypressed
@@ -111,9 +112,10 @@ public abstract class PlatformerCharacter2D : MonoBehaviour
 
 	public void Awake()
 	{
-        gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
-        spawnController = GameObject.FindGameObjectWithTag("PlayerSPawnController").GetComponent<PlayerSpawnController>();
-
+        // gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
+        //spawnController = GameObject.FindGameObjectWithTag("PlayerSpawnController").GetComponent<PlayerSpawnController>();
+        gameController = GameObject.Find("GameController").GetComponent<GameController>();
+        spawnController = GameObject.Find("PlayerSpawnController").GetComponent<PlayerSpawnController>();
         EventManager.resetObjects += Reset;
 
 		EventManager.CreateEventManagerIfNeeded ();
@@ -164,12 +166,176 @@ public abstract class PlatformerCharacter2D : MonoBehaviour
 	}
 	
 
-    void populateInput(float []input)
+    /*Input
+                                             * [0-1] Character x, character y
+                                             * 
+                                             * [2-10] North (-y) Distance (clockwise input: 2-5 is left of center, 6 is directly above, 7-10 is to the right)
+                                             * [11-19] North Block Type (Corresponds 1:1 to the distance inputs) 
+                                             * 
+                                             * [20-28] East Distance
+                                             * [29-37] East Block Type
+                                             * 
+                                             * [38-46] South Distance
+                                             * [47-55] South Block Type
+                                             * 
+                                             * [56-64] West Distance
+                                             * [65-73] West Block Type
+                                             */
+    void populateInput(float[] input)
     {
-        //Do stuff here
-    }
+        float BLOCK = 0.32f;
+        float[] x = new float[2];
+        float[] y = new float[2];
+        float[] offset = new float[2];
+        input[0] = gameController.GuyLocation.transform.position.x;
+        input[1] = gameController.GuyLocation.transform.position.y;
+        Vector2 []origin = new Vector2[2];
+        Vector2 []NESW = new Vector2[4];
 
-    void transferInput(float []input, int []newInput)
+        NESW[0].x = 0;//North
+        NESW[0].y = 1;
+
+        NESW[1].x = 1;//East
+        NESW[1].y = 0;
+
+        NESW[2].x = 0;//South
+        NESW[2].y = -1;
+
+        NESW[3].x = -1;//West
+        NESW[3].y = 0;
+
+
+        //Physics.Raycast(Vector2 origin, Vector2 direction, ContactFilter2D contactFilter, RaycastHit2D[] results, float distance = Mathf.Infinity);
+
+        origin[0].x = input[0];//Player position
+        origin[0].y = input[1];
+
+        origin[0].x = input[0];//Player position
+        origin[0].y = input[1];
+        for (int z = 0; z < 2; z++)
+        {
+            x[z] = 0;
+            y[z] = 0;
+            offset[z] = 0;
+        }
+        for (int i = 0; i < 5; i++) // Top-right diagonals (+x, +y) 0.32
+        {
+ 
+            if (i > 0 && input[6 + i] < BLOCK) //Wall checks
+            {
+                y[0] -= BLOCK;
+                offset[0] += BLOCK;
+            }
+            if (i > 0 && input[24 - i] < BLOCK)
+            {
+                x[1] -= BLOCK;
+                offset[1] += BLOCK;
+            }
+ 
+            //Physics.Raycast(, )
+
+            input[6 + i] = 0; //Look up, use xy1
+            input[15 + i] = 1;
+
+            input[24 - i] = 0; //Look right, use xy2
+            input[33 - i] = 1;
+
+            for (int z = 0; z < 2; z++)
+            {
+                x[z] += BLOCK;
+                y[z] += BLOCK;
+            }
+        }
+        //---------------------------------------------------------------------------------------------
+
+        for (int z = 0; z < 2; z++)
+        {
+            x[z] = 0;
+            y[z] = 0;
+        }
+        for (int i = 0; i < 5; i++) // Bottom-right diagonals (+x, -y) 0.32
+        {
+            if (i > 0 && input[24 + i] < BLOCK) //Wall checks
+            {
+                x[0] -= BLOCK;
+            }
+            if (i > 0 && input[42 - i] < BLOCK)
+            {
+                y[1] += BLOCK;
+            }
+            input[24 + i] = 0; //Look right, use xy1
+            input[33 + i] = 1;
+
+            input[42 - i] = 0; //Look down, use xy2
+            input[51 - i] = 1;
+
+            for (int z = 0; z < 2; z++)
+            {
+                x[z] += BLOCK;
+                y[z] -= BLOCK;
+            }
+        }
+        //---------------------------------------------------------------------------------------------
+        for (int z = 0; z < 2; z++)
+        {
+            x[z] = 0;
+            y[z] = 0;
+        }
+        for (int i = 0; i < 5; i++) // Bottom-left diagonals (-x, -y) 0.32
+        {
+            if (i > 0 && input[42 + i] < BLOCK) //Wall checks
+            {
+                y[0] += BLOCK;
+            }
+            if (i > 0 && input[60 - i] < BLOCK)
+            {
+                x[1] += BLOCK;
+            }
+            input[42 + i] = 0; //Look down, use xy1
+            input[51 + i] = 1;
+
+            input[60 - i] = 0; //Look left, use xy2
+            input[69 - i] = 1;
+
+            for (int z = 0; z < 2; z++)
+            {
+                x[z] -= BLOCK;
+                y[z] -= BLOCK;
+            }
+        }
+        //---------------------------------------------------------------------------------------------
+
+        for (int z = 0; z < 2; z++)
+        {
+            x[z] = 0;
+            y[z] = 0;
+        }
+        for (int i = 0; i < 5; i++) // Top-left diagonals (-x, +y) 0.32
+        {
+            if (i > 0 && input[60 + i] < BLOCK) //Wall checks
+            {
+                x[0] += BLOCK;
+            }
+            if (i > 0 && input[6 - i] < BLOCK)
+            {
+                y[1] -= BLOCK;
+            }
+            input[60 + i] = 0; //Look left, use xy1
+            input[69 + i] = 1;
+
+            input[6 - i] = 0; //Look up, use xy2
+            input[15 - i] = 1;
+
+            for (int z = 0; z < 2; z++)
+            {
+                x[z] -= BLOCK;
+                y[z] += BLOCK;
+            }
+        }
+    }
+    //---------------------------------------------------------------------------------------------
+
+    void transferInput(float[] input, float[] newInput)
     {
         if (input[0] < -.5) //Movement
             newInput[0] = -1;
@@ -194,46 +360,56 @@ public abstract class PlatformerCharacter2D : MonoBehaviour
         else
             newInput[2] = 1;
     }
-	
-	void FixedUpdate()
-	{
 
-        float []output = new float[3];
+    //this is where the magic happens
+    void FixedUpdate()
+    {
+        //Move(1);
+        float[] output = new float[3];
         float[] input = new float[74];
         int it;
 
-        int[] newOutput = new int[3];
+        float[] newOutput = new float[3];
 
         populateInput(input);
 
         it = spawnController.ManagerNetwork.iter;
+       // printf("iter: %d", iter);
+        /* if(_isMoving)
+         {
+             Move (moveDirection);
+             _isMoving = false;
+         }
 
-        /*if(_isMoving)
-		{
-			Move (moveDirection);
-			_isMoving = false;
-		}
-		
-		if(_isJumping)
-		{
-			Jump ();
-			_isJumping = false;
-		}*/
+         if(_isJumping)
+         {
+             Jump ();
+             _isJumping = false;
+         }*/
 
         output = (spawnController.ManagerNetwork.nets[it]).FeedForward(input);
         transferInput(output, newOutput);
 
-        ApplyGravity();
-		SetAnimationVariables();
+        if (newOutput[0] != 0)//Move
+            Move(newOutput[0]);
 
-		if(currentHorizontalSpeed == 0 && _theRigidbody2D.velocity.x != 0)	// Nullify outside forces on the player, just in case
-		{
-//			print (_theRigidBody2D.velocity.x);
-			_theRigidbody2D.velocity = new Vector2(0, _theRigidbody2D.velocity.y);
-		}
-	}
-	
-	void Update()
+        if (newOutput[1] != 0)//Jump
+        {
+            Jump();
+            newOutput[1] = newOutput[1] - 1;
+        }
+
+        ApplyGravity();
+        SetAnimationVariables();
+
+        if (currentHorizontalSpeed == 0 && _theRigidbody2D.velocity.x != 0) // Nullify outside forces on the player, just in case
+        {
+            //			print (_theRigidBody2D.velocity.x);
+            _theRigidbody2D.velocity = new Vector2(0, _theRigidbody2D.velocity.y);
+        }
+    }
+
+    void Update()
 	{
 		if(!_isMoving)
 		{
