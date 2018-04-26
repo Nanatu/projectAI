@@ -54,7 +54,10 @@ public class TeleportInRoom : MonoBehaviour
 	{
 		if (other.gameObject.tag == "Player" && !isWarping)
 		{
-			isWarping = true;
+            (GameObject.Find("PlayerSpawnController").GetComponent<PlayerSpawnController>()).ManagerNetwork.win = true;
+            (GameObject.Find("PlayerSpawnController").GetComponent<PlayerSpawnController>()).ManagerNetwork.Update();
+
+            isWarping = true;
 
 			effectClone1 = createWarpEffect(transform);
 			otherObject = other;

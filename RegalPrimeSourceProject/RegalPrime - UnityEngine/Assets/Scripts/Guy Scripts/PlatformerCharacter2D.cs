@@ -191,6 +191,8 @@ public abstract class PlatformerCharacter2D : MonoBehaviour
         input[1] = gameController.GuyLocation.transform.position.y;
         Vector2 []origin = new Vector2[2];
         Vector2 []NESW = new Vector2[4];
+        string stringystring;
+        //int hits;
 
         NESW[0].x = 0;//North
         NESW[0].y = 1;
@@ -203,20 +205,19 @@ public abstract class PlatformerCharacter2D : MonoBehaviour
 
         NESW[3].x = -1;//West
         NESW[3].y = 0;
-
+        ContactFilter2D temp = new ContactFilter2D();
+        temp.layerMask = 0;
+        //RaycastHit2D[] results =  new RaycastHit2D[100];
 
         //Physics.Raycast(Vector2 origin, Vector2 direction, ContactFilter2D contactFilter, RaycastHit2D[] results, float distance = Mathf.Infinity);
 
-        origin[0].x = input[0];//Player position
-        origin[0].y = input[1];
-
-        origin[0].x = input[0];//Player position
-        origin[0].y = input[1];
         for (int z = 0; z < 2; z++)
         {
             x[z] = 0;
             y[z] = 0;
             offset[z] = 0;
+            origin[z].x = input[0];
+            origin[z].y = input[1];
         }
         for (int i = 0; i < 5; i++) // Top-right diagonals (+x, +y) 0.32
         {
@@ -231,14 +232,29 @@ public abstract class PlatformerCharacter2D : MonoBehaviour
                 x[1] -= BLOCK;
                 offset[1] += BLOCK;
             }
- 
-            //Physics.Raycast(, )
+            
+            for(int z = 0; z < 2; z++)
+            {
+                origin[z].x += (i * BLOCK) + x[z];
+                origin[z].y += (i * BLOCK) + y[z];
+            }
+            //hits = Physics2D.Raycast(origin[0], NESW[0], temp, results, 100 * BLOCK);
+            var results = Physics2D.Raycast(origin[0], NESW[0], 100 * BLOCK, 8);
 
-            input[6 + i] = 0; //Look up, use xy1
-            input[15 + i] = 1;
+            //Debug.Log(results.transform.name);
+           // Debug.Log(results.collider.tag);
 
-            input[24 - i] = 0; //Look right, use xy2
-            input[33 - i] = 1;
+
+
+            input[6 + i] = results.distance - offset[0];
+            //results.
+            input[15 + i] = 0;
+
+        
+
+            results = Physics2D.Raycast(origin[0], NESW[0], 100 * BLOCK, 8);
+            input[24 - i] = results.distance - offset[1];
+            input[33 - i] = 0;
 
             for (int z = 0; z < 2; z++)
             {
@@ -252,22 +268,64 @@ public abstract class PlatformerCharacter2D : MonoBehaviour
         {
             x[z] = 0;
             y[z] = 0;
+            offset[z] = 0;
+            origin[z].x = input[0];
+            origin[z].y = input[1];
         }
         for (int i = 0; i < 5; i++) // Bottom-right diagonals (+x, -y) 0.32
         {
             if (i > 0 && input[24 + i] < BLOCK) //Wall checks
             {
                 x[0] -= BLOCK;
+                offset[0] += BLOCK;
             }
             if (i > 0 && input[42 - i] < BLOCK)
             {
                 y[1] += BLOCK;
+                offset[1] += BLOCK;
             }
-            input[24 + i] = 0; //Look right, use xy1
-            input[33 + i] = 1;
 
-            input[42 - i] = 0; //Look down, use xy2
-            input[51 - i] = 1;
+            for (int z = 0; z < 2; z++)
+            {
+                origin[z].x += (i * BLOCK) + x[z];
+                origin[z].y += (i * BLOCK) + y[z];
+            }
+
+            //hits = Physics2D.Raycast(origin[0], NESW[0], temp, results, 100 * BLOCK);
+            var results = Physics2D.Raycast(origin[0], NESW[0], 100 * BLOCK, 8);
+
+            input[24 + i] = results.distance - offset[0];
+             input[33 + i] = 0;
+
+            Debug.Log("This worked\n");
+
+            results = Physics2D.Raycast(origin[0], NESW[0], 100 * BLOCK, 8);
+            input[42 - i] = results.distance - offset[1];
+            input[51 - i] = 0;
+
+            /* hits = Physics2D.Raycast(origin[0], NESW[0], temp, results, 100 * BLOCK);
+             input[24 + i] = 1000;
+             for (int z = 0; z < hits; z++)
+             {
+                 if (input[24 + i] < results[z].distance)
+                 {
+                     input[24 + i] = results[z].distance;
+                     input[33 + i] = float.Parse(results[z].collider.tag);
+                 }
+             }
+             input[24 + i] -= offset[0];
+
+             hits = Physics2D.Raycast(origin[1], NESW[1], temp, results, 100 * BLOCK);
+             input[42 - i] = 1000;
+             for (int z = 0; z < hits; z++)
+             {
+                 if (input[42 - i] < results[z].distance)
+                 {
+                     input[42 - i] = results[z].distance;
+                     input[51 - i] = float.Parse(results[z].collider.tag);
+                 }
+             }
+             input[42 - i] -= offset[1];*/
 
             for (int z = 0; z < 2; z++)
             {
@@ -280,22 +338,42 @@ public abstract class PlatformerCharacter2D : MonoBehaviour
         {
             x[z] = 0;
             y[z] = 0;
+            offset[z] = 0;
+            origin[z].x = input[0];
+            origin[z].y = input[1];
         }
         for (int i = 0; i < 5; i++) // Bottom-left diagonals (-x, -y) 0.32
         {
             if (i > 0 && input[42 + i] < BLOCK) //Wall checks
             {
                 y[0] += BLOCK;
+                offset[0] += BLOCK;
             }
             if (i > 0 && input[60 - i] < BLOCK)
             {
                 x[1] += BLOCK;
+                offset[1] += BLOCK;
             }
-            input[42 + i] = 0; //Look down, use xy1
-            input[51 + i] = 1;
 
-            input[60 - i] = 0; //Look left, use xy2
-            input[69 - i] = 1;
+            for (int z = 0; z < 2; z++)
+            {
+                origin[z].x += (i * BLOCK) + x[z];
+                origin[z].y += (i * BLOCK) + y[z];
+            }
+
+            //hits = Physics2D.Raycast(origin[0], NESW[0], temp, results, 100 * BLOCK);
+            var results = Physics2D.Raycast(origin[0], NESW[0], 100 * BLOCK, 8);
+
+            input[42 + i] = results.distance - offset[0];
+            input[51 + i] = 0;
+
+            Debug.Log("This worked\n");
+
+            results = Physics2D.Raycast(origin[0], NESW[0], 100 * BLOCK, 8);
+            input[60 - i] = results.distance - offset[1];
+             input[69 - i] = 0;
+
+
 
             for (int z = 0; z < 2; z++)
             {
@@ -309,22 +387,41 @@ public abstract class PlatformerCharacter2D : MonoBehaviour
         {
             x[z] = 0;
             y[z] = 0;
+            offset[z] = 0;
+            origin[z].x = input[0];
+            origin[z].y = input[1];
         }
         for (int i = 0; i < 5; i++) // Top-left diagonals (-x, +y) 0.32
         {
             if (i > 0 && input[60 + i] < BLOCK) //Wall checks
             {
                 x[0] += BLOCK;
+                offset[0] += BLOCK;
             }
             if (i > 0 && input[6 - i] < BLOCK)
             {
                 y[1] -= BLOCK;
+                offset[1] += BLOCK;
             }
-            input[60 + i] = 0; //Look left, use xy1
-            input[69 + i] = 1;
 
-            input[6 - i] = 0; //Look up, use xy2
-            input[15 - i] = 1;
+            for (int z = 0; z < 2; z++)
+            {
+                origin[z].x += (i * BLOCK) + x[z];
+                origin[z].y += (i * BLOCK) + y[z];
+            }
+            //Physics.Raycast(Vector2 origin, Vector2 direction, ContactFilter2D contactFilter, RaycastHit2D[] results, float distance = Mathf.Infinity);
+            //hits = Physics2D.Raycast(origin[0], NESW[0], temp, results, 100 * BLOCK);
+            var results = Physics2D.Raycast(origin[0], NESW[0], 100 * BLOCK, 8);
+
+            input[60 + i] = results.distance - offset[0];
+             input[69 + i] = 0;
+
+            Debug.Log("This worked\n");
+
+            results = Physics2D.Raycast(origin[0], NESW[0], 100 * BLOCK, 8);
+            input[6 - i] = results.distance - offset[1];
+            input[15 - i] =0;
+
 
             for (int z = 0; z < 2; z++)
             {

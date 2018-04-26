@@ -126,9 +126,11 @@ public class GameController : MonoBehaviour
 	}
 
 
-	void OnButtonPressed_ResetScreen()
+	public void OnButtonPressed_ResetScreen()
 	{
-		if(Application.loadedLevel != 0 && Application.loadedLevel != 1 && !StartAtBeginning)
+        (GameObject.Find("PlayerSpawnController").GetComponent<PlayerSpawnController>()).ManagerNetwork.Update();
+
+        if (Application.loadedLevel != 0 && Application.loadedLevel != 1 && !StartAtBeginning)
 		{
 			loadingFile = true;
 			SaveTimerDeath();						// Updates Timer
@@ -147,7 +149,8 @@ public class GameController : MonoBehaviour
 	}
 	void OnButtonPressed_HardResetScreen()
 	{
-		if(Application.loadedLevel != 0 && Application.loadedLevel != 1 && !StartAtBeginning)
+        (GameObject.Find("PlayerSpawnController").GetComponent<PlayerSpawnController>()).ManagerNetwork.Update();
+        if (Application.loadedLevel != 0 && Application.loadedLevel != 1 && !StartAtBeginning)
 		{
 			loadingFile = false;
 			SaveTimerDeath();					// Updates Timer
@@ -157,7 +160,8 @@ public class GameController : MonoBehaviour
 	}
 	public void OnButtonPressed_ResetGame()
 	{
-		if(Application.loadedLevel != 0 && Application.loadedLevel != 1 && !StartAtBeginning)
+        (GameObject.Find("PlayerSpawnController").GetComponent<PlayerSpawnController>()).ManagerNetwork.Update();
+        if (Application.loadedLevel != 0 && Application.loadedLevel != 1 && !StartAtBeginning)
 			SaveTimerDeath();
 		Application.LoadLevel (0);
 	}

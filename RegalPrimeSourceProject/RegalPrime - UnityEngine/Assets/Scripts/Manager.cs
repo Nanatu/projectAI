@@ -60,7 +60,7 @@ public class Manager : MonoBehaviour {
             else
                 nets[iter].AddFitness(1f);
 
-           gameController.OnButtonPressed_ResetGame();
+            gameController.OnButtonPressed_ResetScreen();
             nets.Sort();
             for (int x = 0; x < populationSize / 2; x++)
             {
@@ -75,10 +75,11 @@ public class Manager : MonoBehaviour {
             }
 
             generationNumber++;
-            Invoke("Timer", 10f);
+            Invoke("Timer", 1f);
 
             iter = (iter + 1) % populationSize; //Cycle through the population
             win = false;
+
         }
     }
 

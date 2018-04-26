@@ -9,7 +9,9 @@ using System.Collections;
 
 public class PlayerHPModule : MonoBehaviour
 {
-	public GameObject gameOverScreen;				// Prefab that displays the gameover text
+    GameController gameController;
+
+    public GameObject gameOverScreen;				// Prefab that displays the gameover text
 	public GameObject bloodParticleEffect;			// Prefab of a particle effect
 
 	public AudioClip hitSound;						// Sound when player is hit and still has hp
@@ -27,7 +29,8 @@ public class PlayerHPModule : MonoBehaviour
 
 	void Start()
 	{
-		PlayerCurrentHP = PlayerMaxHP;
+        gameController = GameObject.Find("GameController").GetComponent<GameController>();
+        PlayerCurrentHP = PlayerMaxHP;
 		EventManager.resetObjects += Reset;
 	}
 	void OnDestroy()
@@ -59,13 +62,15 @@ public class PlayerHPModule : MonoBehaviour
 
 		if (other.gameObject.tag == "Deadly" && CanPlayerBeDamaged)
 		{
+            
 			CanPlayerBeDamaged = false;
 			StartCoroutine (ResetDamageDelay());
 			PlayerCurrentHP --;
 
 			if(PlayerCurrentHP <= 0)
 			{
-				if(gameOverScreen != null)
+                (GameObject.Find("PlayerSpawnController").GetComponent<PlayerSpawnController>()).ManagerNetwork.Update();
+                if (gameOverScreen != null)
 					gameOverScreen_Clone = Instantiate(gameOverScreen, new Vector2(0,0), Quaternion.identity) as GameObject;
 
 				if(bloodParticleEffect != null)
@@ -88,7 +93,9 @@ public class PlayerHPModule : MonoBehaviour
 				if(GameController.control.StartAtBeginning == false)		// If the player has a save file going this run save the death
 					GameController.control.SaveTimerDeath ();
 				GameController.control.StopTimer();							// Stop ingame timer
-			}
+
+                gameController.OnButtonPressed_ResetScreen();
+            }
 			else
 			{
 				if(hitSound != null)
